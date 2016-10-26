@@ -12,7 +12,7 @@ import play.api.test.Helpers._
  */
 class HomeControllerSpec extends PlaySpec with OneAppPerTest {
 
-  "HomeController" should {
+  "HomeController GET" should {
 
     "render the index page from a new instance of controller" in {
       val controller = new HomeController
@@ -22,7 +22,6 @@ class HomeControllerSpec extends PlaySpec with OneAppPerTest {
       contentType(home) mustBe Some("text/html")
       contentAsString(home) must include ("Welcome to Play")
     }
-
 
     "render the index page from the application" in {
       val controller = app.injector.instanceOf[HomeController]
@@ -34,7 +33,9 @@ class HomeControllerSpec extends PlaySpec with OneAppPerTest {
     }
 
     "render the index page from the router" in {
-      val home = route(app, FakeRequest(GET, "/")).get
+      // Need to specify Host header to get through AllowedHostsFilter
+      val request = FakeRequest(GET, "/").withHeaders("Host" -> "localhost")
+      val home = route(app, request).get
 
       status(home) mustBe OK
       contentType(home) mustBe Some("text/html")
