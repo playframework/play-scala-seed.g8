@@ -12,7 +12,7 @@ import play.api.test.Helpers._
  */
 class HomeControllerSpec extends PlaySpec with OneAppPerTest {
 
-  "HomeController" should {
+  "HomeController GET" should {
 
     "render the index page from a new instance of controller" in {
       val controller = new HomeController
@@ -22,7 +22,6 @@ class HomeControllerSpec extends PlaySpec with OneAppPerTest {
       contentType(home) mustBe Some("text/html")
       contentAsString(home) must include ("Welcome to Play")
     }
-
 
     "render the index page from the application" in {
       val controller = app.injector.instanceOf[HomeController]
