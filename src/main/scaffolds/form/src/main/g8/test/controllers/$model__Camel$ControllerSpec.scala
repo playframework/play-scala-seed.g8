@@ -17,7 +17,7 @@ import play.api.test.Helpers._
  */
 class $model;format="Camel"$ControllerSpec extends PlaySpec with OneAppPerTest {
 
-  "$model;format=\"Camel\"$Controller GET" should {
+  "$model;format="Camel"$Controller GET" should {
 
     "render the index page from a new instance of controller" in {
       val controller = new $model;format="Camel"$Controller
