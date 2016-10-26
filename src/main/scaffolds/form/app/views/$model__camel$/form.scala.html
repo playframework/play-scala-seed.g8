@@ -6,7 +6,7 @@
 
 @helper.form(action = routes.$model;format="Camel"$Controller.$model;format="camel"$Post()) {
   @helper.CSRF.formField
-  @helper.inputText(userForm("name"))
-  @helper.inputText(userForm("age"))
+  @helper.inputText($model;format="camel"$Form("name"))
+  @helper.inputText($model;format="camel"$Form("age"))
   <input type="submit" value="submit"/>
 }
