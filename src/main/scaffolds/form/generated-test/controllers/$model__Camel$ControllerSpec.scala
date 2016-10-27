@@ -64,13 +64,12 @@ class $model;format="Camel"$ControllerSpec extends PlaySpec with OneAppPerTest {
 
   "$model;format="Camel"$Controller POST" should {
     "process form" in {
-      val controller = app.injector.instanceOf[$model;format="Camel"$Controller]
-      val request = addToken {
+      val request = {
         FakeRequest(POST, "/$model;format="camel"$")
           .withHeaders("Host" -> "localhost")
           .withFormUrlEncodedBody("name" -> "play", "age" -> "4")
       }
-      val home = controller.$model;format="camel"$Post().apply(request)
+      val home = route(app, request).get
 
       status(home) mustBe SEE_OTHER
     }

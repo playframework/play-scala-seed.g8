@@ -21,7 +21,6 @@ POST    /$model;format="camel"$        controllers.$model;format="Camel"$Control
  */
 class $model;format="Camel"$Controller @Inject()(implicit val messagesApi: MessagesApi) extends Controller with I18nSupport {
 
-
   val $model;format="camel"$Form = Form(
     mapping(
       "name" -> text,
