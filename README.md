@@ -4,7 +4,7 @@ Giter8 template for generating a Play project seed in Scala.
 
 This project is intended for people who know how to use Play and want to get started right away.
 
-You should only need to download this project if you are modifying the giter8 template.  For information on giter8 templates, please see http://www.foundweekends.org/giter8/
+You should only need to clone this project if you are modifying the giter8 template.  For information on giter8 templates, please see http://www.foundweekends.org/giter8/
 
 ## Running
 
