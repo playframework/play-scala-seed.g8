@@ -21,7 +21,7 @@ repositories {
 }
 
 def playVersion = '$play_version$'
-def scalaVersion = '2.11'
+def scalaVersion = '2.12'
 
 model {
     components {
