@@ -18,25 +18,24 @@ import play.filters.csrf.{CSRFConfigProvider, CSRFFilter}
 /**
  * $model;format="Camel"$ form controller specs
  */
-class $model;format="Camel"$ControllerSpec extends PlaySpec with OneAppPerTest {
+class $model;format="Camel"$ControllerSpec extends PlaySpec with GuiceOneAppPerTest with Injecting {
 
-  def addToken[T](fakeRequest: FakeRequest[T]) = {
-    val csrfConfig     = app.injector.instanceOf[CSRFConfigProvider].get
-    val csrfFilter     = app.injector.instanceOf[CSRFFilter]
-    val token          = csrfFilter.tokenProvider.generateToken
-
-    fakeRequest.copyFakeRequest(tags = fakeRequest.tags ++ Map(
-    Token.NameRequestTag  -> csrfConfig.tokenName,
-    Token.RequestTag      -> token
-    )).withHeaders((csrfConfig.headerName, token))
+  // Provide stubs for components based off Helpers.stubControllerComponents()
+  class StubComponents(cc:ControllerComponents = stubControllerComponents()) extends MessagesControllerComponents {
+    override val parsers: PlayBodyParsers = cc.parsers
+    override val messagesApi: MessagesApi = cc.messagesApi
+    override val langs: Langs = cc.langs
+    override val fileMimeTypes: FileMimeTypes = cc.fileMimeTypes
+    override val executionContext: ExecutionContext = cc.executionContext
+    override val actionBuilder: ActionBuilder[Request, AnyContent] = cc.actionBuilder
+    override val messagesActionBuilder: MessagesActionBuilder = new DefaultMessagesActionBuilderImpl(parsers.default, messagesApi)(executionContext)
   }
 
   "$model;format="Camel"$Controller GET" should {
 
     "render the index page from a new instance of controller" in {
-      implicit val messagesApi = app.injector.instanceOf[MessagesApi]
-      val controller = new $model;format="Camel"$Controller
-      val request = addToken(FakeRequest())
+      val controller = new $model;format="Camel"$Controller(new StubComponents())
+      val request = FakeRequest().withCSRFToken
       val home = controller.$model;format="camel"$Get().apply(request)
 
       status(home) mustBe OK
@@ -44,8 +43,8 @@ class $model;format="Camel"$ControllerSpec extends PlaySpec with OneAppPerTest {
     }
 
     "render the index page from the application" in {
-      val controller = app.injector.instanceOf[$model;format="Camel"$Controller]
-      val request = addToken(FakeRequest())
+      val controller = inject[$model;format="Camel"$Controller]
+      val request = FakeRequest().withCSRFToken
       val home = controller.$model;format="camel"$Get().apply(request)
 
       status(home) mustBe OK
@@ -53,8 +52,7 @@ class $model;format="Camel"$ControllerSpec extends PlaySpec with OneAppPerTest {
     }
 
     "render the index page from the router" in {
-      val request = addToken(FakeRequest(GET, "/$model;format="camel"$")
-        .withHeaders("Host" -> "localhost"))
+      val request = CSRFTokenHelper.addCSRFToken(FakeRequest(GET, "/derp"))
       val home = route(app, request).get
 
       status(home) mustBe OK
@@ -66,7 +64,6 @@ class $model;format="Camel"$ControllerSpec extends PlaySpec with OneAppPerTest {
     "process form" in {
       val request = {
         FakeRequest(POST, "/$model;format="camel"$")
-          .withHeaders("Host" -> "localhost")
           .withFormUrlEncodedBody("name" -> "play", "age" -> "4")
       }
       val home = route(app, request).get

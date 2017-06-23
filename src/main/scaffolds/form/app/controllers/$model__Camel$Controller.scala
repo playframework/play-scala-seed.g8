@@ -1,9 +1,7 @@
 package controllers
 
 import javax.inject._
-import play.api._
 import play.api.mvc._
-import play.api.i18n._
 
 import play.api.data._
 import play.api.data.Forms._
@@ -19,7 +17,7 @@ POST    /$model;format="camel"$        controllers.$model;format="Camel"$Control
 /**
  * $model;format="Camel"$ form controller for Play Scala
  */
-class $model;format="Camel"$Controller @Inject()(implicit val messagesApi: MessagesApi) extends Controller with I18nSupport {
+class $model;format="Camel"$Controller @Inject()(mcc: MessagesControllerComponents) extends MessagesAbstractController(mcc) {
 
   val $model;format="camel"$Form = Form(
     mapping(
@@ -28,11 +26,11 @@ class $model;format="Camel"$Controller @Inject()(implicit val messagesApi: Messa
     )($model;format="Camel"$Data.apply)($model;format="Camel"$Data.unapply)
   )
 
-  def $model;format="camel"$Get = Action { implicit request =>
+  def $model;format="camel"$Get() = Action { implicit request: MessagesRequest[AnyContent] =>
     Ok(views.html.$model;format="camel"$.form($model;format="camel"$Form))
   }
 
-  def $model;format="camel"$Post = Action { implicit request =>
+  def $model;format="camel"$Post() = Action { implicit request: MessagesRequest[AnyContent] =>
     $model;format="camel"$Form.bindFromRequest.fold(
       formWithErrors => {
         // binding failure, you retrieve the form containing errors:
