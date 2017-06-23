@@ -10,7 +10,7 @@ jdk:
 
 script:
   ## This runs the template with the default parameters, and runs test within the templated app.
-  - sbt -Dfile.encoding=UTF8 -J-XX:ReservedCodeCacheSize=256M test
+  - sbt -Dfile.encoding=UTF8 -J-XX:ReservedCodeCacheSize=256M test g8Test
 
   # Tricks to avoid unnecessary cache updates
   - find $HOME/.sbt -name "*.lock" | xargs rm

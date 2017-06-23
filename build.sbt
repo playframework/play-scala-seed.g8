@@ -1,11 +1,11 @@
-sbtPlugin := true
-
-scalaVersion := "2.12.2"
-
-scriptedSettings
-
-scriptedLaunchOpts ++= sys.process.javaVmArguments.filter(
-  a => Seq("-Xmx", "-Xms", "-XX", "-Dsbt.log.noformat").exists(a.startsWith)
-)
+lazy val root = (project in file(".")).
+  settings(
+    name := "My Template Project",
+    test in Test := {
+      val _ = (g8Test in Test).toTask("").value
+    },
+    scriptedLaunchOpts ++= List("-Xms1024m", "-Xmx1024m", "-XX:ReservedCodeCacheSize=128m", "-XX:MaxPermSize=256m", "-Xss2m", "-Dfile.encoding=UTF-8"),
+    resolvers += Resolver.url("typesafe", url("http://repo.typesafe.com/typesafe/ivy-releases/"))(Resolver.ivyStylePatterns)
+  )
 
 // giter8.ScaffoldPlugin.scaffoldSettings
