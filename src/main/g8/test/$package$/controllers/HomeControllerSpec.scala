@@ -1,5 +1,6 @@
-package controllers
+package $package$.controllers
 
+import $package$.controllers
 import org.scalatestplus.play._
 import org.scalatestplus.play.guice._
 import play.api.test._
