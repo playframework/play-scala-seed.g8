@@ -3,7 +3,7 @@ plugins {
     id 'idea'
 }
 
-def playVersion = '2.6.9'
+def playVersion = '$play_version$'
 def scalaVersion = "2.12"
 
 model {
@@ -22,9 +22,9 @@ model {
 }
 
 dependencies {
-    play "com.typesafe.play:play-guice_$scalaVersion:$playVersion"
-    play "com.typesafe.play:play-logback_$scalaVersion:$playVersion"
-    play "com.typesafe.play:filters-helpers_$scalaVersion:$playVersion"
+    play "com.typesafe.play:play-guice_\$scalaVersion:\$playVersion"
+    play "com.typesafe.play:play-logback_\$scalaVersion:\$playVersion"
+    play "com.typesafe.play:filters-helpers_\$scalaVersion:\$playVersion"
 }
 
 repositories {
