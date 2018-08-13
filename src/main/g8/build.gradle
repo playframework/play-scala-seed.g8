@@ -21,6 +21,36 @@ model {
     }
 }
 
+// EXAMPLE: How to add parameter to Scala compiler
+// Another option is documented here:
+// https://docs.gradle.org/current/userguide/play_plugin.html#sec:configuring_compiler_options
+//
+// See other configurations for ScalaCompile task here:
+// https://docs.gradle.org/current/dsl/org.gradle.api.tasks.scala.ScalaCompile.html
+//
+// tasks.withType(ScalaCompile) {
+//     scalaCompileOptions.additionalParameters = [
+//         "-deprecation",
+//         "-verbose"
+//     ]
+// }
+
+// EXAMPLE: How to add JVM parameters when running `runPlayBinary`.
+// See other configurations for PlayRun here:
+// https://docs.gradle.org/current/dsl/org.gradle.play.tasks.PlayRun.html
+//
+// tasks.withType(PlayRun) {
+//     forkOptions.jvmArgs = ['-Dplay.http.secret.key=yadayada']
+// }
+
+// EXAMPLE: How to add JVM parameters to the script created by `stage`.
+// See more details here:
+// https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/application/CreateStartScripts.html
+//
+// tasks.withType(CreateStartScripts) {
+//     defaultJvmOpts = ['-Dplay.http.secret.key=yadayada']
+// }
+
 dependencies {
     play "com.typesafe.play:play-guice_\$scalaVersion:\$playVersion"
     play "com.typesafe.play:play-logback_\$scalaVersion:\$playVersion"
