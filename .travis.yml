@@ -48,4 +48,3 @@ cache:
     - "$HOME/.ivy2/cache"
     - "$HOME/.gradle/caches"
     - "$HOME/.jabba/jdk"
-    - "$HOME/.sbt/boot"
