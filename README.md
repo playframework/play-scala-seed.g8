@@ -29,3 +29,5 @@ g8 file://play-scala-seed.g8/ --name=my-seed-test --force
 ```
 
 Will create an example template called `my-seed-test`, for example.
+
+TEST
