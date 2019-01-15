@@ -51,12 +51,17 @@ model {
 //     defaultJvmOpts = ['-Dplay.http.secret.key=yadayada']
 // }
 
-dependencies {
-    play "com.typesafe.play:play-guice_\$scalaVersion:\$playVersion"
-    play "com.typesafe.play:play-logback_\$scalaVersion:\$playVersion"
-    play "com.typesafe.play:filters-helpers_\$scalaVersion:\$playVersion"
+def dependencyFor(String lib, String scalaVersion, String version) {
+    return lib + "_" + scalaVersion + ":" + version
+} 
 
-    playTest "org.scalatestplus.play:scalatestplus-play_\$scalaVersion:3.1.2"
+dependencies {
+
+    playTest dependencyFor("com.typesafe.play:play-guice", scalaVersion, playVersion)
+    playTest dependencyFor("com.typesafe.play:play-logback", scalaVersion, playVersion)
+    playTest dependencyFor("com.typesafe.play:filters-helpers", scalaVersion, playVersion)
+
+    playTest dependencyFor("org.scalatestplus.play:scalatestplus-play", scalaVersion, "3.1.2")
 }
 
 repositories {
