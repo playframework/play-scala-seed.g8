@@ -58,9 +58,9 @@ def dependencyFor(String lib, String scalaVersion, String version) {
 
 dependencies {
 
-    playTest dependencyFor("com.typesafe.play:play-guice", scalaVersion, playVersion)
-    playTest dependencyFor("com.typesafe.play:play-logback", scalaVersion, playVersion)
-    playTest dependencyFor("com.typesafe.play:filters-helpers", scalaVersion, playVersion)
+    play dependencyFor("com.typesafe.play:play-guice", scalaVersion, playVersion)
+    play dependencyFor("com.typesafe.play:play-logback", scalaVersion, playVersion)
+    play dependencyFor("com.typesafe.play:filters-helpers", scalaVersion, playVersion)
 
     playTest dependencyFor("org.scalatestplus.play:scalatestplus-play", scalaVersion, "4.0.0-RC2")
 }
