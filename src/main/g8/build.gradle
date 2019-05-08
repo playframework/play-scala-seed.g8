@@ -3,7 +3,7 @@ plugins {
     id 'idea'
 }
 
-def playVersion = "2.7.0"
+def playVersion = "2.7.2"
 def scalaVersion = System.getProperty("scala.binary.version", /* default = */ "2.12")
 
 model {
@@ -62,7 +62,7 @@ dependencies {
     play dependencyFor("com.typesafe.play:play-logback", scalaVersion, playVersion)
     play dependencyFor("com.typesafe.play:filters-helpers", scalaVersion, playVersion)
 
-    playTest dependencyFor("org.scalatestplus.play:scalatestplus-play", scalaVersion, "4.0.1")
+    playTest dependencyFor("org.scalatestplus.play:scalatestplus-play", scalaVersion, "4.0.2")
 }
 
 repositories {
