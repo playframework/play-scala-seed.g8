@@ -1,19 +1,15 @@
 package controllers
 
-import javax.inject._
-import play.api._
 import play.api.mvc._
 import play.api.i18n._
-
-import play.api.data._
-import play.api.data.Forms._
-
 import org.scalatestplus.play._
+import org.scalatestplus.play.guice.GuiceOneAppPerTest
+import play.api.http.FileMimeTypes
 import play.api.test._
 import play.api.test.Helpers._
+import play.api.test.CSRFTokenHelper._
 
-import play.filters.csrf.CSRF.Token
-import play.filters.csrf.{CSRFConfigProvider, CSRFFilter}
+import scala.concurrent.ExecutionContext
 
 /**
  * $model;format="Camel"$ form controller specs
@@ -52,7 +48,7 @@ class $model;format="Camel"$ControllerSpec extends PlaySpec with GuiceOneAppPerT
     }
 
     "render the index page from the router" in {
-      val request = CSRFTokenHelper.addCSRFToken(FakeRequest(GET, "/derp"))
+      val request = CSRFTokenHelper.addCSRFToken(FakeRequest(GET, "/$model;format="camel"$"))
       val home = route(app, request).get
 
       status(home) mustBe OK
