@@ -4,7 +4,7 @@ plugins {
 }
 
 def playVersion = "2.7.3"
-def scalaVersion = System.getProperty("scala.binary.version", /* default = */ "2.12")
+def scalaVersion = System.getProperty("scala.binary.version", /* default = */ "2.13")
 
 model {
     components {
