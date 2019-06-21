@@ -3,8 +3,8 @@ plugins {
     id 'idea'
 }
 
-def playVersion = "2.7.2"
-def scalaVersion = System.getProperty("scala.binary.version", /* default = */ "2.12")
+def playVersion = "2.7.3"
+def scalaVersion = System.getProperty("scala.binary.version", /* default = */ "2.13")
 
 model {
     components {
