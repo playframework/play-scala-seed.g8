@@ -1,5 +1,5 @@
 language: scala
-scala: 2.13.0
+scala: 2.13.1
 
 env:
   - TRAVIS_JDK=adopt@1.8.222-10
