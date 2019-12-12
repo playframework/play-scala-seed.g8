@@ -1,6 +1,8 @@
 # play-scala-seed.g8
 
-Giter8 template for generating a Play project seed in Scala.  
+[![Build Status](https://travis-ci.com/playframework/play-scala-seed.g8.svg?branch=2.8.x)](https://travis-ci.com/playframework/play-scala-seed.g8)
+
+Giter8 template for generating a Play project seed in Scala.
 
 This project is intended for people who know how to use Play and want to get started right away.
 
