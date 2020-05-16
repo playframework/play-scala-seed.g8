@@ -20,4 +20,4 @@ The following sbt plugins are explicitly included in this template:
 Each of their respective repositories has substantially more documentation than
 will be provided in this readme.
 
-[1]: https://github.com/cameronhotchkies/semisafe-play.g8
+[0]: https://github.com/cameronhotchkies/semisafe-play.g8
