@@ -20,8 +20,7 @@ libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0
 *                                Code Style                                   *
 *******************************************************************************/
 
-scalafmtOnCompile in ThisBuild := true
-
+// Code style is enforced by the IDE. Do not enable it on build
 
 /******************************************************************************
 *                               Code Coverage                                 *
