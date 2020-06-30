@@ -12,4 +12,4 @@ lazy val root = (project in file(".")).
 // giter8.ScaffoldPlugin.scaffoldSettings
 
 // Monitor this for src/main/g8/.scalafmt.conf
-libraryDependencies += "org.scalameta" %% "scalafmt-core" % "2.5.2"
+libraryDependencies += "org.scalameta" %% "scalafmt-core" % "2.6.1"
