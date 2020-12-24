@@ -5,7 +5,7 @@ version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-scalaVersion := "2.13.3"
+scalaVersion := "2.13.4"
 
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test
@@ -27,7 +27,7 @@ libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0
 *******************************************************************************/
 
 // Required for IntelliJ IDEA to not complain about the scoverage plugin
-libraryDependencies += "org.scoverage" %% "scalac-scoverage-runtime" % "1.4.1" % Test
+libraryDependencies += "org.scoverage" %% "scalac-scoverage-runtime" % "1.4.2" % Test
 
 coverageExcludedPackages := """.*Reverse.*Controller;controllers\..*Reverse.*;router.Routes.*;"""
 
