@@ -15,9 +15,9 @@ concurrency:
 jobs:
   tests:
     name: Tests
-    uses: playframework/.github/.github/workflows/cmd.yml@v2
+    uses: playframework/.github/.github/workflows/cmd.yml@v3
     with:
-      java: 11, 8
+      java: 17, 11
       cmd: sbt test g8Test
 
   finish:
@@ -25,4 +25,4 @@ jobs:
     if: github.event_name == 'pull_request'
     needs: # Should be last
       - "tests"
-    uses: playframework/.github/.github/workflows/rtm.yml@v2
+    uses: playframework/.github/.github/workflows/rtm.yml@v3
