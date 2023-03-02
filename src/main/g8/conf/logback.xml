@@ -19,7 +19,12 @@
   </appender>
 
   <appender name="STDOUT" class="ConsoleAppender">
-    <withJansi>true</withJansi>
+    <!--
+         On Windows, enabling Jansi is recommended to benefit from color code interpretation on DOS command prompts,
+         which otherwise risk being sent ANSI escape sequences that they cannot interpret.
+         See https://logback.qos.ch/manual/layouts.html#coloring
+    -->
+    <!-- <withJansi>true</withJansi> -->
     <encoder class="PatternLayoutEncoder">
       <charset>UTF-8</charset>
       <pattern>%d{yyyy-MM-dd HH:mm:ss} %highlight(%-5level) %cyan(%logger{36}) %magenta(%X{akkaSource}) %msg%n</pattern>
