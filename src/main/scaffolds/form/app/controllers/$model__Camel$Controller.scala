@@ -10,8 +10,8 @@ case class $model;format="Camel"$Data(name: String, age: Int)
 
 // NOTE: Add the following to conf/routes to enable compilation of this class:
 /*
-GET     /$model;format="camel"$        controllers.$model;format="Camel"$Controller.$model;format="camel"$Get
-POST    /$model;format="camel"$        controllers.$model;format="Camel"$Controller.$model;format="camel"$Post
+GET     /$model;format="camel"$        controllers.$model;format="Camel"$Controller.$model;format="camel"$Get()
+POST    /$model;format="camel"$        controllers.$model;format="Camel"$Controller.$model;format="camel"$Post()
 */
 
 /**
@@ -31,7 +31,7 @@ class $model;format="Camel"$Controller @Inject()(mcc: MessagesControllerComponen
   }
 
   def $model;format="camel"$Post() = Action { implicit request: MessagesRequest[AnyContent] =>
-    $model;format="camel"$Form.bindFromRequest.fold(
+    $model;format="camel"$Form.bindFromRequest().fold(
       formWithErrors => {
         // binding failure, you retrieve the form containing errors:
         BadRequest(views.html.$model;format="camel"$.form(formWithErrors))
