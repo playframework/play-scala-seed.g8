@@ -1,0 +1,9 @@
+# This is a sbt scripted test
+
+> compile
+> test
+
+> g8Scaffold form --model=user
+
+$exists app/controllers/UserController.scala
+$exists test/controllers/UserControllerSpec.scala
