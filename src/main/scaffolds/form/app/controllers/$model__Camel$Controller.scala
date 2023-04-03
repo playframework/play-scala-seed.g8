@@ -7,6 +7,9 @@ import play.api.data._
 import play.api.data.Forms._
 
 case class $model;format="Camel"$Data(name: String, age: Int)
+object $model;format="Camel"$Data {
+  def unapply(data: $model;format="Camel"$Data): Option[(String, Int)] = Some((data.name, data.age))
+}
 
 // NOTE: Add the following to conf/routes to enable compilation of this class:
 /*
