@@ -29,7 +29,9 @@ sbt new playframework/play-scala-seed.g8
 
 ## Scaffolding
 
-Type `g8Scaffold form` from sbt to create the scaffold controller, template and tests needed to process a form. Be aware you then have to add new routes to the `conf/routes` file, otherwise compilation will fail. See the comments in the newly created controller class which routes need to be added.
+Type `g8Scaffold form` from sbt to create the scaffold controller, template and tests needed to process a form. Be aware you then have to:
+* Either add new routes to the `conf/routes` file, otherwise compilation will fail. See the comments in the newly created controller class which routes need to be added.
+* Or use the `--force` flag which will set up the required routes in the routes file, but overrides any changes you did in that file.
 
 You can also create your own giter8 seeds and scaffolds based off this one by forking from the <https://github.com/playframework/play-java-seed.g8> or <https://github.com/playframework/play-scala-seed.g8> github projects.
 
