@@ -3,12 +3,10 @@
 > compile
 > test
 
-# TODO: Switch to g8ScaffoldForce and uncomment last two lines when
-# https://github.com/foundweekends/giter8/pull/771 got merged
-> g8Scaffold form --model=user
+> g8Scaffold form --force --model=user
 
 $exists app/controllers/UserController.scala
 $exists test/controllers/UserControllerSpec.scala
 
-#> compile
-#> test
+> compile
+> test
