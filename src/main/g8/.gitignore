@@ -1,9 +1,38 @@
-logs
-target
-/.bsp
-/.idea
-/.idea_modules
-/.classpath
-/.project
-/.settings
-/RUNNING_PID
+target/
+boot/
+lib_managed/
+src_managed/
+project/plugins/project/
+.idea
+.bsp
+
+logs/
+RUNNING_PID
+
+# bloop and metals
+.bloop
+
+# metals
+project/metals.sbt
+.metals
+*/project/metals.sbt
+*/.metals
+
+# vs code
+.vscode
+
+# scala 3
+.tasty
+
+# sbt
+project/project/
+*/project/project/
+project/target/
+
+# other?
+.history
+.scala_dependencies
+.cache-main
+
+#general
+*.class
