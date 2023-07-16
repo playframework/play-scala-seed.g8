@@ -16,7 +16,6 @@ RUNNING_PID
 project/metals.sbt
 .metals
 */project/metals.sbt
-*/.metals
 
 # vs code
 .vscode
