@@ -8,7 +8,7 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 scalaVersion := "$scala_version$"
 
 libraryDependencies += guice
-libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "7.0.0-M1" % Test
+libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "7.0.0" % Test
 
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "$organization$.controllers._"
