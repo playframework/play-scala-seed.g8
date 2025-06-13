@@ -5,3 +5,4 @@ src_managed/
 project/plugins/project/
 .idea
 .bsp
+phantom-deps/
