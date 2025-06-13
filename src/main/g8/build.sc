@@ -3,9 +3,9 @@ import \$ivy.`com.lihaoyi::mill-contrib-playlib:`,  mill.playlib._
 
 object $name;format="camel"$ extends PlayModule with SingleModule {
     
-  def scalaVersion = "$scala_version$"
-  def playVersion = "$play_version$"
-  def twirlVersion = "1.6.2"
+  def scalaVersion = "2.13.16"
+  def playVersion = "2.9.7"
+  def twirlVersion = "1.6.9"
 
   object test extends PlayTests
 }
