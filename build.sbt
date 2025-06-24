@@ -16,7 +16,7 @@ lazy val phantomDeps = (project in file("phantom-deps"))
     scalaVersion := "2.13.16", // ! Also update in src/main/g8/[build.sc|build.sbt] !
     libraryDependencies ++= Seq(
       "com.typesafe.play" %% "twirl-compiler" % "1.6.9", // ! Also update in src/main/g8/build.sc !
-      "org.scalatestplus.play" %% "scalatestplus-play" % "6.0.1", // ! Also update in src/main/g8/build.sbt !
+      "org.scalatestplus.play" %% "scalatestplus-play" % "7.0.1", // ! Also update in src/main/g8/build.sbt !
       "com.typesafe.play" %% "play-routes-compiler" % "2.9.7", // ! Also update in src/main/g8/[build.sc|project/plugins.sbt] !
       "org.foundweekends.giter8" %% "giter8" % "0.17.0", // ! Also update in project/plugins.sbt and src/main/g8/project/plugins.sbt !
     )
