@@ -18,6 +18,6 @@ lazy val phantomDeps = (project in file("phantom-deps"))
       "com.typesafe.play" %% "twirl-compiler" % "1.6.10", // ! Also update in src/main/g8/build.sc !
       "org.scalatestplus.play" %% "scalatestplus-play" % "6.0.2", // ! Also update in src/main/g8/build.sbt !
       "com.typesafe.play" %% "play-routes-compiler" % "2.9.9", // ! Also update in src/main/g8/[build.sc|project/plugins.sbt] !
-      "org.foundweekends.giter8" %% "giter8" % "0.17.0", // ! Also update in project/plugins.sbt and src/main/g8/project/plugins.sbt !
+      "org.foundweekends.giter8" %% "giter8" % "0.18.0", // ! Also update in project/plugins.sbt and src/main/g8/project/plugins.sbt !
     )
   )
