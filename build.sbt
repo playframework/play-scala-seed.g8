@@ -13,7 +13,7 @@ lazy val phantomDeps = (project in file("phantom-deps"))
   .disablePlugins(ScriptedPlugin, Giter8Plugin)
   .settings(
     publish / skip := true,
-    scalaVersion := "2.13.16", // ! Also update in src/main/g8/[build.sc|build.sbt] !
+    scalaVersion := "2.13.17", // ! Also update in src/main/g8/[build.sc|build.sbt] !
     libraryDependencies ++= Seq(
       "org.playframework.twirl" %% "twirl-compiler" % "2.0.9", // ! Also update in src/main/g8/build.sc !
       "org.scalatestplus.play" %%"scalatestplus-play" % "7.0.2", // ! Also update in src/main/g8/build.sbt !
