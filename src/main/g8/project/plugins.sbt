@@ -1,2 +1,2 @@
-addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.9.10")
+addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.9.11")
 addSbtPlugin("org.foundweekends.giter8" % "sbt-giter8-scaffold" % "0.18.0")
