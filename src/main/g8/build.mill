@@ -1,0 +1,14 @@
+//| mvnDeps: ["com.lihaoyi::mill-contrib-playlib:\$MILL_VERSION"]
+package build
+
+import mill.*
+import mill.playlib.*
+
+object `package` extends PlayModule {
+
+  override def scalaVersion = Task { "2.13.18" }
+  override def playVersion = Task { "3.0.11" }
+  override def twirlVersion = Task { "2.0.9" }
+
+  object test extends PlayTests
+}
