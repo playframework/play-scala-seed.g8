@@ -6,7 +6,7 @@ import mill.playlib.*
 
 object `package` extends PlayModule {
 
-  override def scalaVersion = Task { "2.13.18" }
+  override def scalaVersion = Task { "3.9.0" }
   override def playVersion = Task { "3.0.11" }
   override def twirlVersion = Task { "2.0.9" }
 
